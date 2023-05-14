@@ -21,8 +21,12 @@ export const Calculator = () => {
     }
   }
 
-  const onChange = (newNumber: string | number) => {
+  const onAddNumber = (newNumber: string | number) => {
     setCurrentNumber(`${currentNumber}${newNumber}`)
+  }
+
+  const onChange = (newNumber: string | number) => {
+    setCurrentNumber(`${newNumber}`)
   }
 
   const calc = () => {
@@ -57,7 +61,7 @@ export const Calculator = () => {
               {numberActions.map(n => (
                 <Col span={7} key={n}>
                   <Button
-                    onClick={() => onChange(n)}
+                    onClick={() => onAddNumber(n)}
                     shape={'circle'}
                     size={'large'}>
                     {n}
